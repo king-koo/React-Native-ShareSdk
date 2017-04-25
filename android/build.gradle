@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
-                QQ_APP_ID: "100371282", //qq AppId
+                QQ_APP_ID: "1106022853", //qq AppId
         ]
     }
     buildTypes {

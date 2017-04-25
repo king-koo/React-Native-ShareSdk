@@ -22,10 +22,10 @@ RCT_EXPORT_MODULE();
          *  在此事件中写入连接代码。第四个参数则为配置本地社交平台时触发，根据返回的平台类型来配置平台信息。
          *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
          */
-        [ShareSDK registerApp:@"iosv1101"
+        [ShareSDK registerApp:@"1d363ea111204"
               activePlatforms:@[@(SSDKPlatformSubTypeWechatSession), @(SSDKPlatformSubTypeWechatTimeline), @(SSDKPlatformTypeQQ)]
                      onImport:^(SSDKPlatformType platformType) {
-                         
+
                          switch (platformType)
                          {
                              case SSDKPlatformTypeWechat:
@@ -40,16 +40,16 @@ RCT_EXPORT_MODULE();
                          }
                      }
               onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
-                  
+
                   switch (platformType)
                   {
                       case SSDKPlatformTypeWechat:
-                          [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                                                appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                          [appInfo SSDKSetupWeChatByAppId:@"wx8fea745360beff34"
+                                                appSecret:@"909e68228a7d507a9596abd70a31b3ed"];
                           break;
                       case SSDKPlatformTypeQQ:
-                          [appInfo SSDKSetupQQByAppId:@"100371282"
-                                               appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                          [appInfo SSDKSetupQQByAppId:@"1106022853"
+                                               appKey:@"RLkWmqgzoaaRYI22"
                                              authType:SSDKAuthTypeBoth];
                           break;
                       default:
@@ -133,7 +133,7 @@ RCT_EXPORT_METHOD(showShare:(NSString *)title :(NSString *)content :(NSString *)
                                  items:nil
                            shareParams:shareParams
                    onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-                       
+
                        switch (state) {
                            case SSDKResponseStateSuccess:
                            {
