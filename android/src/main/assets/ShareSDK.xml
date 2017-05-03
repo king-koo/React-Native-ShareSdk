@@ -60,8 +60,8 @@
     <SinaWeibo
         Id="1"
         SortId="1"
-        AppKey="568898243"
-        AppSecret="38a4f8204cc784f81f9f0daaf31e02e3"
+        AppKey="2044183409"
+        AppSecret="0b632beedcf283a00446b180ca319b97"
         RedirectUrl="https://www.wxjin.com"
         ShareByAppClient="true"
         Enable="true" />
@@ -88,24 +88,24 @@
     <Wechat
         Id="4"
         SortId="4"
-        AppId="wx8fea745360beff34"
-        AppSecret="909e68228a7d507a9596abd70a31b3ed"
+        AppId="wx6df6901d20322913"
+        AppSecret="d9a639dc90c6f727da639dd4bda34ad6"
         BypassApproval="true"
         Enable="true" />
 
     <WechatMoments
         Id="5"
         SortId="5"
-        AppId="wx8fea745360beff34"
-        AppSecret="909e68228a7d507a9596abd70a31b3ed"
+        AppId="wx6df6901d20322913"
+        AppSecret="d9a639dc90c6f727da639dd4bda34ad6"
         BypassApproval="false"
         Enable="true" />
 
 	<WechatFavorite
         Id="6"
         SortId="6"
-        AppId="wx8fea745360beff34"
-        AppSecret="909e68228a7d507a9596abd70a31b3ed"
+        AppId="wx6df6901d20322913"
+        AppSecret="d9a639dc90c6f727da639dd4bda34ad6"
         Enable="true" />
 
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->

@@ -35,6 +35,9 @@ RCT_EXPORT_MODULE();
                                  [ShareSDKConnector connectQQ:[QQApiInterface class]
                                             tencentOAuthClass:[TencentOAuth class]];
                                  break;
+                             case SSDKPlatformTypeSinaWeibo:
+                                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                                 break;
                              default:
                                  break;
                          }
@@ -43,9 +46,16 @@ RCT_EXPORT_MODULE();
 
                   switch (platformType)
                   {
+                      case SSDKPlatformTypeSinaWeibo:
+                           //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                           [appInfo SSDKSetupSinaWeiboByAppKey:@"2044183409"
+                                                      appSecret:@"0b632beedcf283a00446b180ca319b97"
+                                                    redirectUri:@"https://www.wxjin.com"
+                                                       authType:SSDKAuthTypeBoth];
+                          break;
                       case SSDKPlatformTypeWechat:
-                          [appInfo SSDKSetupWeChatByAppId:@"wx8fea745360beff34"
-                                                appSecret:@"909e68228a7d507a9596abd70a31b3ed"];
+                          [appInfo SSDKSetupWeChatByAppId:@"wx6df6901d20322913"
+                                                appSecret:@"d9a639dc90c6f727da639dd4bda34ad6"];
                           break;
                       case SSDKPlatformTypeQQ:
                           [appInfo SSDKSetupQQByAppId:@"1106022853"
