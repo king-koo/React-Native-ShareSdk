@@ -23,7 +23,10 @@ RCT_EXPORT_MODULE();
          *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
          */
         [ShareSDK registerApp:@"1d363ea111204"
-              activePlatforms:@[@(SSDKPlatformSubTypeWechatSession), @(SSDKPlatformSubTypeWechatTimeline), @(SSDKPlatformTypeQQ)]
+              activePlatforms:@[@(SSDKPlatformTypeSinaWeibo),
+                                @(SSDKPlatformSubTypeWechatSession),
+                                @(SSDKPlatformSubTypeWechatTimeline),
+                                @(SSDKPlatformSubTypeQQFriend)]
                      onImport:^(SSDKPlatformType platformType) {
 
                          switch (platformType)
@@ -138,9 +141,15 @@ RCT_EXPORT_METHOD(showShare:(NSString *)title :(NSString *)content :(NSString *)
                                             url:[NSURL URLWithString:url]
                                           title:title
                                            type:SSDKContentTypeAuto];
+        [shareParams SSDKEnableUseClientShare];
         //2、分享（可以弹出我们的分享菜单和编辑界面）
-        [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
-                                 items:nil
+        SSUIShareActionSheetController *sheet = [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
+                                 
+                                                                         items:@[
+                                                                                 @(SSDKPlatformSubTypeWechatSession),
+                                                                                 @(SSDKPlatformSubTypeWechatTimeline),
+                                                                                 @(SSDKPlatformSubTypeQQFriend),
+                                                                                 @(SSDKPlatformTypeSinaWeibo)]
                            shareParams:shareParams
                    onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
 
@@ -158,7 +167,10 @@ RCT_EXPORT_METHOD(showShare:(NSString *)title :(NSString *)content :(NSString *)
                        }
                    }
          ];
+        //删除和添加平台示例
+        [sheet.directSharePlatforms addObject:@(SSDKPlatformTypeSinaWeibo)];
     });
+    
 }
 
 @end

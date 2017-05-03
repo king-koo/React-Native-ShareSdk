@@ -1,4 +1,44 @@
 重要!
+
+SDK1.7.7
+1 增加SDK分享小程序
+2 增加选择发票接口
+
+SDK1.7.6
+1. 提高稳定性
+1 修复mta崩溃
+2  新增接口支持开发者关闭mta数据统计上报
+
+SDK1.7.5
+1. 提高稳定性
+2. 加快registerApp接口启动速度
+
+SDK1.7.4
+1. 更新支持iOS启用 ATS(App Transport Security)
+2. 需要在工程中链接CFNetwork.framework
+3. 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”
+
+SDK1.7.3
+1. 增强稳定性，适配iOS10
+2. 修复小于32K的jpg格式缩略图设置失败的问题
+
+SDK1.7.2
+1. 修复因CTTeleponyNetworkInfo引起的崩溃问题
+
+SDK1.7.1
+1. 支持兼容ipv6(提升稳定性)
+2. xCode Version 7.3.1 (7D1014) 编译
+
+SDK1.7
+1. 支持兼容ipv6
+2. 修复若干问题增强稳定性
+
+SDK1.6.3
+1. xCode7.2 构建的sdk包。
+2. 请使用xCode7.2进行编译。
+3. 需要在Build Phases中Link  Security.framework
+4. 修复若干小问题。
+
 SDK1.6.2
 1、xCode7.1 构建的sdk包
 2、请使用xCode7.1进行编译
