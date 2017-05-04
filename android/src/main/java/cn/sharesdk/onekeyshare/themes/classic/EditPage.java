@@ -78,7 +78,6 @@ public class EditPage extends OnekeySharePage implements OnClickListener, TextWa
 	public void setActivity(Activity activity) {
 		super.setActivity(activity);
 		if (isDialogMode()) {
-			System.err.println("Theme classic does not support dialog mode!");
 //			activity.setTheme(android.R.style.Theme_Dialog);
 //			activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //			if (Build.VERSION.SDK_INT >= 11) {
@@ -88,9 +87,8 @@ public class EditPage extends OnekeySharePage implements OnClickListener, TextWa
 //			}
 		}
 
-		activity.getWindow().setSoftInputMode(
-				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE |
-				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+		activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE
+				| WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 	}
 
 	public void onCreate() {

@@ -114,8 +114,9 @@ public abstract class OnekeyShareThemeImpl implements PlatformActionListener, Ca
 				|| "Bluetooth".equals(name) || "WhatsApp".equals(name)
 				|| "BaiduTieba".equals(name) || "Laiwang".equals(name)
 				|| "LaiwangMoments".equals(name) || "Alipay".equals(name)
-				|| "AlipayMoments".equals(name)|| "FacebookMessenger".equals(name)
-				|| "GooglePlus".equals(name)
+				|| "AlipayMoments".equals(name) || "FacebookMessenger".equals(name)
+				|| "GooglePlus".equals(name) || "Dingding".equals(name)
+				|| "Youtube".equals(name) || "Meipai".equals(name)
 				) {
 			return true;
 		} else if ("Evernote".equals(name)) {
